@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Flores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f2;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4a1c16;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        video {
+            width: 80%;
+            border-radius: 5px;
+        }
+        .colors {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Brinquedos e Presentes London</h1>
+    <div class="container">
+        <div class="card">
+            <video id="video1" controls>
+                <source src="/mnt/data/8ef9ca17-31f7-4db7-80ad-afb57fe54f42.mp4" type="video/mp4">
+            </video>
+            <p>Flor P/ Enfeite</p>
+            <p>Cores Disponíveis</p>
+            <div class="colors">
+                <div class="color" style="background-color: red;" onclick="changeVideo('video1', '/mnt/data/8ef9ca17-31f7-4db7-80ad-afb57fe54f42.mp4')"></div>
+                <div class="color" style="background-color: blue;" onclick="changeVideo('video1', '/mnt/data/951e2a36-d0bf-4794-a882-d6aafbf0111a.mp4')"></div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <video id="video2" controls>
+                <source src="/mnt/data/951e2a36-d0bf-4794-a882-d6aafbf0111a.mp4" type="video/mp4">
+            </video>
+            <p>Flor P/ Enfeite</p>
+            <p>Cores Disponíveis</p>
+            <div class="colors">
+                <div class="color" style="background-color: yellow;" onclick="changeVideo('video2', '/mnt/data/951e2a36-d0bf-4794-a882-d6aafbf0111a.mp4')"></div>
+                <div class="color" style="background-color: purple;" onclick="changeVideo('video2', '/mnt/data/8ef9ca17-31f7-4db7-80ad-afb57fe54f42.mp4')"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeVideo(videoId, videoSrc) {
+            let videoElement = document.getElementById(videoId);
+            videoElement.src = videoSrc;
+            videoElement.play();
+        }
+    </script>
+</body>
+</html>
+
